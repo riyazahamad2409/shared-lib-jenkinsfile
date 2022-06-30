@@ -1,6 +1,7 @@
 @Library('shared-library') _
 
 def config = [ name: 'jenkins', dayOfWeek: 'Friday' ]
+def args = [ repo: 'java-projects' ]
 
 pipeline {
     agent any
@@ -15,6 +16,11 @@ pipeline {
         stage('scm checkout') { 
             steps {   
                 gitCheckout()
+            }
+        }
+        stage('Build') {
+            steps {
+                buildJavaApp(args)
             }
         }
     }
