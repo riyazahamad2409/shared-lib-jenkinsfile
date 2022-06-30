@@ -27,5 +27,10 @@ pipeline {
                 buildJavaApp()
             }
         }
+        stage('Build') {
+            steps {
+                buildDockerImage()
+            }
+        }
     }
 }
