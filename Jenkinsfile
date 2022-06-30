@@ -27,14 +27,9 @@ pipeline {
                 buildJavaApp()
             }
         }
-        stage('Build image') {
+        stage('Build & Push image') {
             steps {
                 buildDockerImage()
-            }
-        }
-        stage('Push image') {
-            steps {
-                publishDockerImage()
             }
         }
     }
