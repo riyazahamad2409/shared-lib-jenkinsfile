@@ -22,12 +22,12 @@ pipeline {
                 gitCheckout(args)
             }
         }
-        stage('Build') {
+        stage('Build app') {
             steps {
                 buildJavaApp()
             }
         }
-        stage('Build') {
+        stage('Build image') {
             steps {
                 buildDockerImage()
             }
