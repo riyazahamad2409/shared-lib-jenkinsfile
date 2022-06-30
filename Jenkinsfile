@@ -19,7 +19,7 @@ pipeline {
     
         stage('scm checkout') { 
             steps {   
-                gitCheckout()
+                gitCheckout(args)
             }
         }
         stage('Build') {
