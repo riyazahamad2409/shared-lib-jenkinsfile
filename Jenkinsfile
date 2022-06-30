@@ -32,5 +32,10 @@ pipeline {
                 buildDockerImage()
             }
         }
+        stage('Push image') {
+            steps {
+                publishDockerImage()
+            }
+        }
     }
 }
