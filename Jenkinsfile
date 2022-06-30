@@ -5,9 +5,7 @@ def args = [ repo: 'java-projects' ]
 
 pipeline {
     agent any
-    tools {
-        maven 'Maven' 
-    }
+    
     
     stages {
 
@@ -24,7 +22,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo "hello 3rd"
+                buildJavaApp()
             }
         }
     }
