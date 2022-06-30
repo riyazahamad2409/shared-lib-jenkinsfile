@@ -19,12 +19,12 @@ pipeline {
     
         stage('scm checkout') { 
             steps {   
-                echo 'hello 2nd'
+                gitCheckout()
             }
         }
         stage('Build') {
             steps {
-                buildJavaApp(args)
+                echo "hello 3rd"
             }
         }
     }
