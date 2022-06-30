@@ -15,7 +15,7 @@ pipeline {
     
         stage('scm checkout') { 
             steps {   
-                gitCheckout()
+                echo 'hello 2nd'
             }
         }
         stage('Build') {
