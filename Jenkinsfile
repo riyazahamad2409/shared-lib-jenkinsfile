@@ -41,7 +41,7 @@ pipeline {
         }
         stage('Deploy to GKE') {
             steps {
-                deployImageGke()
+                deployImageGke(file)
             }
         }
     }
