@@ -8,6 +8,12 @@ pipeline {
     tools {
         maven 'Maven' 
     }
+    environment {
+        PROJECT_ID = 'mineral-hangar-354512'
+        CLUSTER_NAME = 'cluster-1'
+        LOCATION = 'us-central1-c'
+        CREDENTIALS_ID = 'Kubernetes'
+    }
     
     stages {
 
@@ -30,6 +36,11 @@ pipeline {
         stage('Build & Push image') {
             steps {
                 buildDockerImage()
+            }
+        }
+        stage('Deploy to GKE') {
+            steps {
+                deployImageGke()
             }
         }
     }
