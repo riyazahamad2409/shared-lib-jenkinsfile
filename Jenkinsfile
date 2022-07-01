@@ -13,6 +13,7 @@ pipeline {
         CLUSTER_NAME = 'cluster-1'
         LOCATION = 'us-central1-c'
         CREDENTIALS_ID = 'Kubernetes'
+        DEPLOYMENT_YAML = 'deployment'
     }
     
     stages {
@@ -40,7 +41,7 @@ pipeline {
         }
         stage('Deploy to GKE') {
             steps {
-                deployImageGke(file)
+                deployImageGke()
             }
         }
     }
