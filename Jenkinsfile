@@ -3,6 +3,7 @@
 def config = [ name: 'jenkins', dayOfWeek: 'Friday' ]
 def args = [ repo: 'java-projects' ]
 def file = [ name: 'deployment' ]
+
 pipeline {
     agent any
     tools {
@@ -31,7 +32,7 @@ pipeline {
         }
         stage('Deploy to GKE') {
             steps {
-                deployImageGke(file)
+                connectToGke()
             }
         }
     }
