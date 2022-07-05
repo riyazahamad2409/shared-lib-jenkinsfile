@@ -2,19 +2,12 @@
 
 def config = [ name: 'jenkins', dayOfWeek: 'Friday' ]
 def args = [ repo: 'java-projects' ]
-def file = [ name: 'deployment' ]
+def file = [ name: 'deployment', zone: 'us-central1-c', project: 'mineral-hangar-354512' ]
 
 pipeline {
     agent any
     tools {
         maven 'Maven' 
-    }
-    environment {
-        PROJECT_ID = 'mineral-hangar-354512'
-        CLUSTER_NAME = 'cluster-1'
-        LOCATION = 'us-central1-c'
-        CREDENTIALS_ID = 'Kubernetes'
-        DEPLOYMENT_YAML = 'deployment.yaml'
     }
     
     stages {
