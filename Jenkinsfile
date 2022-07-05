@@ -29,16 +29,7 @@ pipeline {
                 gitCheckout(args)
             }
         }
-        stage('Build app') {
-            steps {
-                buildJavaApp()
-            }
-        }
-        stage('Build & Push image') {
-            steps {
-                buildDockerImage()
-            }
-        }
+        
         stage('Deploy to GKE') {
             steps {
                 deployImageGke(file)
