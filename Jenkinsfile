@@ -1,7 +1,7 @@
 @Library('shared-library') _
 
 def config = [ name: 'jenkins', dayOfWeek: 'Friday' ]
-def args = [ repo: 'java-projects' ]
+def args = [ repo: 'Angular-HelloWorld' ]
 def file = [ name: 'deployment' ]
 pipeline {
     agent any
