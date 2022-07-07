@@ -5,9 +5,7 @@ def args = [ repo: 'Angular-HelloWorld' ]
 def file = [ name: 'deployment' ]
 pipeline {
     agent any
-    tools {
-        maven 'Maven' 
-    }
+    
     environment {
         PROJECT_ID = 'mineral-hangar-354512'
         CLUSTER_NAME = 'cluster-1'
