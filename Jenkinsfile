@@ -31,19 +31,9 @@ pipeline {
         }
         stage('Build app') {
             steps {
-                buildJavaApp()
-            }
-        }
-        stage('Build & Push image') {
-            steps {
-                buildDockerImage()
+                buildAngularApp()
             }
         }
         
-        stage('Deploy to GKE') {
-            steps {
-                deployImageGke(file)
-            }
-        }
     }
 }
