@@ -5,6 +5,9 @@ def args = [ repo: 'Angular-HelloWorld' ]
 def file = [ name: 'deployment' ]
 pipeline {
     agent any
+    tools {
+        nodejs 'NodeJS' 
+    }
     
     environment {
         PROJECT_ID = 'mineral-hangar-354512'
